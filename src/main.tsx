@@ -6,9 +6,7 @@ import "./styles/base.css";
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-              <h1>Currently under construction...</h1>
-
+    <h1>Currently under construction...</h1>
     <App />
-
   </StrictMode>,
 )

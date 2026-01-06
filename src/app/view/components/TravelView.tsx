@@ -1,6 +1,8 @@
 import type { TravelModel } from "../../model/siteModel";
 import SectionTitleView from "./SectionTitleView";
 import CardView from "./CardView";
+import TravelSliderView from "./TravelSliderView";
+
 
 type Props = {
   travel: TravelModel;
@@ -33,23 +35,8 @@ export default function TravelView({ travel }: Props) {
 
       <p className="hint">{travel.photos.hint}</p>
 
-      <div className="grid">
-        {travel.photos.items.map((ph) => (
-          <CardView
-            key={ph.src}
-            title={ph.title}
-            subtitle={ph.desc}
-          >
-            <div className="media">
-              <img
-                src={ph.src}
-                alt={ph.title}
-                loading="lazy"
-              />
-            </div>
-          </CardView>
-        ))}
-      </div>
+      <TravelSliderView items={travel.photos.items} />
+
     </section>
   );
 }

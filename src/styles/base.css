@@ -562,3 +562,106 @@ a:hover {
   background: rgba(122, 162, 255, 0.18);
   color: #ffffff;
 }
+
+
+
+/* --------------------
+   VIDEO LAZY LOAD
+-------------------- */
+.video-box {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0b0e14;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.video-cover {
+  width: 100%;
+  height: 190px;
+  border: 0;
+  cursor: pointer;
+  background: radial-gradient(circle at 30% 30%, #1a2240, #0b0e14);
+  color: #e6e8eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.video-cover:hover {
+  background: radial-gradient(circle at 30% 30%, #223060, #0b0e14);
+}
+
+.video-play {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(122, 162, 255, 0.22);
+  border: 1px solid rgba(122, 162, 255, 0.35);
+}
+
+.video-iframe {
+  width: 100%;
+  height: 190px;
+  border: 0;
+  display: block;
+}
+
+
+
+/* --------------------
+   SLIDER BASE
+-------------------- */
+.slider {
+  margin-top: 1.25rem;
+}
+
+.slider-top {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.75rem;
+}
+
+.slider-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #111522;
+  color: #e6e8eb;
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  background: rgba(122, 162, 255, 0.12);
+}
+
+.slider-dots {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 0.9rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+}
+
+.dot.is-active {
+  background: rgba(122, 162, 255, 0.85);
+}
