@@ -1,5 +1,6 @@
 import type { ExperienceModel } from "../../model/siteModel";
 import SectionTitleView from "./SectionTitleView";
+import CardView from "./CardView";
 
 type Props = {
   experience: ExperienceModel;
@@ -7,24 +8,22 @@ type Props = {
 
 export default function ExperienceView({ experience }: Props) {
   return (
-    <section id="experience" className="section fade-in">
-      <SectionTitleView
-          id="experience"
-          title={experience.title}
-        />
-        
+    <section className="section fade-in">
+      <SectionTitleView id="experience" title={experience.title} />
+
       <div className="stack">
         {experience.items.map((item) => (
-          <article key={`${item.title}-${item.when}`} className="card">
-            <h3>{item.title}</h3>
-            <p className="muted">{item.when}</p>
-
+          <CardView
+            key={`${item.title}-${item.when}`}
+            title={item.title}
+            subtitle={item.when}
+          >
             <ul>
               {item.bullets.map((b, idx) => (
                 <li key={`${item.title}-${idx}`}>{b}</li>
               ))}
             </ul>
-          </article>
+          </CardView>
         ))}
       </div>
     </section>

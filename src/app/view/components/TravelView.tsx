@@ -1,5 +1,6 @@
 import type { TravelModel } from "../../model/siteModel";
 import SectionTitleView from "./SectionTitleView";
+import CardView from "./CardView";
 
 type Props = {
   travel: TravelModel;
@@ -7,13 +8,14 @@ type Props = {
 
 export default function TravelView({ travel }: Props) {
   return (
-    <section id="travel" className="section fade-in">
+    <section className="section fade-in">
       <SectionTitleView
-          id="travel"
-          title={travel.title}
-          subtitle={travel.intro}
-        />
+        id="travel"
+        title={travel.title}
+        subtitle={travel.intro}
+      />
 
+      {/* country flags */}
       <div className="flags" aria-label="Countries">
         {travel.flags.map((f) => (
           <span key={f.name} className="flag" title={f.name}>
@@ -22,26 +24,34 @@ export default function TravelView({ travel }: Props) {
         ))}
       </div>
 
+      {/* quote */}
       <figure className="quote">
         <blockquote>{travel.quote.text}</blockquote>
         <figcaption>{travel.quote.author}</figcaption>
       </figure>
 
-      <h3>{travel.photos.title}</h3>
-      <p>{travel.photos.intro}</p>
-      <div className="hint">{travel.photos.hint}</div>
+      <SectionTitleView
+        title={travel.photos.title}
+        subtitle={travel.photos.intro}
+      />
 
-      {/* Placeholder gallery. Later we will add slider controls. */}
+      <p className="hint">{travel.photos.hint}</p>
+
       <div className="grid">
         {travel.photos.items.map((ph) => (
-          <article key={ph.src} className="card">
+          <CardView
+            key={ph.src}
+            title={ph.title}
+            subtitle={ph.desc}
+          >
             <div className="media">
-              {/* If you keep images in public/assets, update src accordingly later */}
-              <img src={ph.src} alt={ph.title} loading="lazy" />
+              <img
+                src={ph.src}
+                alt={ph.title}
+                loading="lazy"
+              />
             </div>
-            <h4>{ph.title}</h4>
-            <p>{ph.desc}</p>
-          </article>
+          </CardView>
         ))}
       </div>
     </section>

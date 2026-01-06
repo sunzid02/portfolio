@@ -387,37 +387,37 @@ export const siteModel: SiteModel = {
       hint: "Use the arrows to browse photos.",
       items: [
         {
-          src: "assets/travel/germany.jpg",
+          src: "src/assets/travel/germany.jpg",
           title: "Germany",
           desc: "Match day energy with a giant flag and even bigger ex...on, like software, scales very fast in the right environment.",
         },
         {
-          src: "assets/travel/austria.jpg",
+          src: "src/assets/travel/austria.jpg",
           title: "Austria",
           desc: "Cold air, calm views, and that feeling of...ture. Great reminder that pace matters, not just speed.",
         },
         {
-          src: "assets/travel/switzerland.jpg",
+          src: "src/assets/travel/switzerland.jpg",
           title: "Switzerland",
           desc: "Sharp mountains, clean air, and quiet det...e. I learned how much clarity comes from simplicity.",
         },
         {
-          src: "assets/travel/croatia.jpg",
+          src: "src/assets/travel/croatia.jpg",
           title: "Croatia",
           desc: "Sun, sea, and a peaceful reset. Travel he...sharper focus and a lighter mindset for work.",
         },
         {
-          src: "assets/travel/spain.jpg",
+          src: "src/assets/travel/spain.jpg",
           title: "Spain",
           desc: "Warm streets, new language, new rhythm. R...t growth often comes from discomfort and curiosity.",
         },
         {
-          src: "assets/travel/turkey.jpg",
+          src: "src/assets/travel/turkey.jpg",
           title: "Turkey",
           desc: "History everywhere and incredible people....ve that context matters when understanding any system.",
         },
         {
-          src: "assets/travel/france.jpg",
+          src: "src/assets/travel/france.jpg",
           title: "France",
           desc: "A quick stop, a big memory. Sometimes the... moments become the most meaningful ones.",
         },

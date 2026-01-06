@@ -1,5 +1,6 @@
 import type { CreatorModel } from "../../model/siteModel";
 import SectionTitleView from "./SectionTitleView";
+import CardView from "./CardView";
 
 type Props = {
   creator: CreatorModel;
@@ -7,27 +8,32 @@ type Props = {
 
 export default function CreatorView({ creator }: Props) {
   return (
-    <section id="creator" className="section fade-in">
-    <SectionTitleView
+    <section className="section fade-in">
+      <SectionTitleView
         id="creator"
         title={creator.title}
         subtitle={creator.intro}
       />
 
-      <div className="hint">{creator.hint}</div>
+      <p className="hint">{creator.hint}</p>
 
-      {/* Placeholder slider. Later we will add JS controls and lazy iframe load. */}
       <div className="grid">
         {creator.videos.map((v) => (
-          <article key={v.id} className="card">
-            <h3>{v.title}</h3>
-            <p>{v.desc}</p>
-            <p>
+          <CardView
+            key={v.id}
+            title={v.title}
+            subtitle={v.desc}
+            headerRight={
               <a href={v.url} target="_blank" rel="noreferrer">
                 Watch
               </a>
-            </p>
-          </article>
+            }
+          >
+            {/* placeholder for thumbnail or iframe later */}
+            <div className="media-placeholder">
+              Video preview will load on click
+            </div>
+          </CardView>
         ))}
       </div>
     </section>

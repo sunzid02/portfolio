@@ -1,5 +1,6 @@
 import type { TechModel } from "../../model/siteModel";
 import SectionTitleView from "./SectionTitleView";
+import CardView from "./CardView";
 
 type Props = {
   tech: TechModel;
@@ -7,25 +8,22 @@ type Props = {
 
 export default function TechView({ tech }: Props) {
   return (
-    <section id="stack" className="section fade-in">
+    <section className="section fade-in">
+      <SectionTitleView id="stack" title={tech.title} subtitle={tech.hint} />
 
-      <SectionTitleView title={tech.title} subtitle={tech.hint} />
-
-      {/* Placeholder for 3D cube UI. We render faces as cards for now. */}
       <div className="grid">
         {tech.faces.map((face) => (
-          <article key={face.title} className="card">
-            <div className="card-head">
-              <h3>{face.title}</h3>
-              <span className="badge">{face.badge}</span>
-            </div>
-
+          <CardView
+            key={face.title}
+            title={face.title}
+            badge={face.badge}
+          >
             <ul>
               {face.items.map((it) => (
                 <li key={it}>{it}</li>
               ))}
             </ul>
-          </article>
+          </CardView>
         ))}
       </div>
     </section>
