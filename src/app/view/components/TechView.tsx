@@ -8,8 +8,8 @@ type Props = {
 
 export default function TechView({ tech }: Props) {
   return (
-    <section className="section fade-in">
-      <SectionTitleView id="stack" title={tech.title} subtitle={tech.hint} />
+<section id="stack" className="section fade-in">
+  <SectionTitleView title={tech.title} subtitle={tech.hint} />
 
       <div className="grid">
         {tech.faces.map((face) => (

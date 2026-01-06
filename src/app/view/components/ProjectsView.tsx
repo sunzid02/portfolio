@@ -8,12 +8,8 @@ type Props = {
 
 export default function ProjectsView({ projects }: Props) {
   return (
-    <section className="section fade-in">
-      <SectionTitleView
-        id="projects"
-        title={projects.title}
-        subtitle={projects.intro}
-      />
+<section id="projects" className="section fade-in">
+  <SectionTitleView title={projects.title} subtitle={projects.intro} />
 
       <div className="grid">
         {projects.items.map((p) => (

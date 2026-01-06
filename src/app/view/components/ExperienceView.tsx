@@ -8,8 +8,8 @@ type Props = {
 
 export default function ExperienceView({ experience }: Props) {
   return (
-    <section className="section fade-in">
-      <SectionTitleView id="experience" title={experience.title} />
+<section id="experience" className="section fade-in">
+  <SectionTitleView title={experience.title} />
 
       <div className="stack">
         {experience.items.map((item) => (

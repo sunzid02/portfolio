@@ -7,8 +7,8 @@ type Props = {
 
 export default function AboutView({ about }: Props) {
   return (
-    <section className="section fade-in">
-      <SectionTitleView id="about" title={about.title} />
+  <section id="about" className="section fade-in">
+      <SectionTitleView title={about.title} />
 
       {about.paragraphs.map((p, idx) => (
         <p key={idx}>{p}</p>

@@ -8,15 +8,9 @@ type Props = {
 
 export default function CreatorView({ creator }: Props) {
   return (
-    <section className="section fade-in">
-      <SectionTitleView
-        id="creator"
-        title={creator.title}
-        subtitle={creator.intro}
-      />
-
+  <section id="creator" className="section fade-in">
+    <SectionTitleView title={creator.title} subtitle={creator.intro} />
       <p className="hint">{creator.hint}</p>
-
       <div className="grid">
         {creator.videos.map((v) => (
           <CardView

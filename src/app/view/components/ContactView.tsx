@@ -1,14 +1,14 @@
-import type { SiteModel } from "../../model/siteModel";
+import type { ContactModel } from "../../model/siteModel";
 import SectionTitleView from "./SectionTitleView";
 
 type Props = {
-  contact: SiteModel["contact"];
+  contact: ContactModel;
 };
 
 export default function ContactView({ contact }: Props) {
   return (
     <section id="contact" className="section fade-in">
-      <SectionTitleView id="contact" title="Contact" />
+      <SectionTitleView title="Contact" />
 
       <p>
         <a href={`mailto:${contact.email}`}>{contact.email}</a>

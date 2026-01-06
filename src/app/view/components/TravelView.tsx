@@ -8,12 +8,8 @@ type Props = {
 
 export default function TravelView({ travel }: Props) {
   return (
-    <section className="section fade-in">
-      <SectionTitleView
-        id="travel"
-        title={travel.title}
-        subtitle={travel.intro}
-      />
+<section id="travel" className="section fade-in">
+  <SectionTitleView title={travel.title} subtitle={travel.intro} />
 
       {/* country flags */}
       <div className="flags" aria-label="Countries">

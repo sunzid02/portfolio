@@ -1,4 +1,6 @@
 import { getSiteModel } from "../controller/siteController";
+import { useFadeInOnScroll } from "./hooks/useFadeInOnScroll";
+import { useActiveSection } from "./hooks/useActiveSection";
 
 import TopBarView from "./components/TopBarView";
 import HeroView from "./components/HeroView";
@@ -11,12 +13,13 @@ import TravelView from "./components/TravelView";
 import ContactView from "./components/ContactView";
 
 export default function HomeView() {
-  // Controller থেকে data আনলাম
+  useFadeInOnScroll(); // 👈 activate fade logic
+  useActiveSection(); // 👈 activate fade logic
+
   const model = getSiteModel();
 
   return (
     <>
-      {/* Three canvas later (no JS yet) */}
       <canvas id="three-canvas" aria-hidden="true"></canvas>
 
       <TopBarView
