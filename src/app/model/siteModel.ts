@@ -422,7 +422,7 @@ export const siteModel: SiteModel = {
           desc: "A quick stop, a big memory. Sometimes the... moments become the most meaningful ones.",
         },
         {
-          src: "assets/travel/bangladesh.jpg",
+          src: "src/assets/travel/bd.jpg",
           title: "Bangladesh",
           desc: "Where it all started. Roots, hustle, famil...h built the mindset I carry into every project.",
         },
