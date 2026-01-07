@@ -1,6 +1,7 @@
-import type { CreatorModel } from "../../model/siteModel";
-import SectionTitleView from "./SectionTitleView";
-import VideoCardView from "./VideoCardView";
+import type { CreatorModel } from "../../../../model/siteModel";
+import SectionTitleView from "../../ui/SectionTitle/SectionTitleView";
+// import VideoCardView from "./VideoCardView";
+import CreatorSliderView from "./CreatorSliderView";
 
 type Props = {
   creator: CreatorModel;
@@ -12,11 +13,7 @@ export default function CreatorView({ creator }: Props) {
       <SectionTitleView title={creator.title} subtitle={creator.intro} />
       <p className="hint">{creator.hint}</p>
 
-      <div className="grid">
-        {creator.videos.map((v) => (
-          <VideoCardView key={v.id} video={v} />
-        ))}
-      </div>
+      <CreatorSliderView items={creator.videos} />
     </section>
   );
 }

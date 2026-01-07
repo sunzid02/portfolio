@@ -1,4 +1,4 @@
-import type { NavItem } from "../../model/siteModel";
+import type { NavItem } from "../../../../model/siteModel";
 
 type Props = {
   brandName: string;

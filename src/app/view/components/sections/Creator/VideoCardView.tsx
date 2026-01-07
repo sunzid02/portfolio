@@ -1,7 +1,7 @@
 import { useState } from "react";
-import type { CreatorVideo } from "../../model/siteModel";
-import CardView from "./CardView";
-import { toYouTubeEmbedUrl } from "../utils/youtube";
+import type { CreatorVideo } from "../../../../model/siteModel";
+import CardView from "../../ui/Card/CardView";
+import { toYouTubeEmbedUrl } from "../../../utils/youtube";
 
 type Props = {
   video: CreatorVideo;

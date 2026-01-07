@@ -1,5 +1,5 @@
-import type { ContactModel } from "../../model/siteModel";
-import SectionTitleView from "./SectionTitleView";
+import type { ContactModel } from "../../../../model/siteModel";
+import SectionTitleView from "../../ui/SectionTitle/SectionTitleView";
 
 type Props = {
   contact: ContactModel;

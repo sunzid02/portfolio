@@ -1,5 +1,5 @@
-import type { AboutModel } from "../../model/siteModel";
-import SectionTitleView from "./SectionTitleView";
+import type { AboutModel } from "../../../../model/siteModel";
+import SectionTitleView from "../../ui/SectionTitle/SectionTitleView";
 
 type Props = {
   about: AboutModel;

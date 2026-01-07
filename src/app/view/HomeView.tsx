@@ -2,15 +2,15 @@ import { getSiteModel } from "../controller/siteController";
 import { useFadeInOnScroll } from "./hooks/useFadeInOnScroll";
 import { useActiveSection } from "./hooks/useActiveSection";
 
-import TopBarView from "./components/TopBarView";
-import HeroView from "./components/HeroView";
-import AboutView from "./components/AboutView";
-import TechView from "./components/TechView";
-import ExperienceView from "./components/ExperienceView";
-import ProjectsView from "./components/ProjectsView";
-import CreatorView from "./components/CreatorView";
-import TravelView from "./components/TravelView";
-import ContactView from "./components/ContactView";
+import TopBarView from "./components/sections/TopBar/TopBarView";
+import HeroView from "./components/sections/Hero/HeroView";
+import AboutView from "./components/sections/About/AboutView";
+import TechView from "./components/sections/Tech/TechView";
+import ExperienceView from "./components/sections/Experience/ExperienceView";
+import ProjectsView from "./components/sections/Projects/ProjectsView";
+import CreatorView from "./components/sections/Creator/CreatorView";
+import TravelView from "./components/sections/Travel/TravelView";
+import ContactView from "./components/sections/Contact/ContactView";
 
 export default function HomeView() {
   useFadeInOnScroll(); // 👈 activate fade logic

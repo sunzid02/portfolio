@@ -1,6 +1,6 @@
-import type { ProjectsModel } from "../../model/siteModel";
-import SectionTitleView from "./SectionTitleView";
-import CardView from "./CardView";
+import type { ProjectsModel } from "../../../../model/siteModel";
+import SectionTitleView from "../../ui/SectionTitle/SectionTitleView";
+import CardView from "../../ui/Card/CardView";
 
 type Props = {
   projects: ProjectsModel;

@@ -1,4 +1,4 @@
-import type { HeroModel } from "../../model/siteModel";
+import type { HeroModel } from "../../../../model/siteModel";
 
 type Props = {
   hero: HeroModel;
