@@ -1,6 +1,5 @@
 import type { CreatorModel } from "../../../../model/siteModel";
 import SectionTitleView from "../../ui/SectionTitle/SectionTitleView";
-// import VideoCardView from "./VideoCardView";
 import CreatorSliderView from "./CreatorSliderView";
 
 type Props = {

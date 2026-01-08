@@ -33,8 +33,8 @@ export default function HomeView() {
         <AboutView about={model.about} />
         <TechView tech={model.tech} />
         <ExperienceView experience={model.experience} />
-        <CreatorView creator={model.creator} />
         <ProjectsView projects={model.projects} />
+        <CreatorView creator={model.creator} />
         <TravelView travel={model.travel} />
         <ContactView contact={model.contact} />
       </main>

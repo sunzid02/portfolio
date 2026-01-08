@@ -1,124 +1,166 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import type { CreatorVideo } from "../../../../model/siteModel";
-import SliderShell from "../../ui/Slider/SliderShell";
 import { toYouTubeEmbedUrl } from "../../../utils/youtube";
-import { useSliderControls } from "../../../hooks/useSliderControls"; 
+import "./creator-carousel.css";
 
 type Props = {
   items: CreatorVideo[];
 };
 
 export default function CreatorSliderView({ items }: Props) {
-  const safeItems = useMemo(() => items ?? [], [items]);
-  const total = safeItems.length;
-
   const [index, setIndex] = useState(0);
-  const [loadedIds, setLoadedIds] = useState<Record<string, true>>({});
+  const [loadedIds, setLoadedIds] = useState<Record<string, boolean>>({});
 
-  const current = total > 0 ? safeItems[index] : null;
+  const total = items.length;
+
+  if (!items || items.length === 0) {
+    return <p className="hint">No videos yet.</p>;
+  }
+
+  const canPrev = index > 0;
+  const canNext = index < total - 1;
 
   const goPrev = () => {
-    if (total === 0) return;
-    setIndex((i) => (i - 1 + total) % total);
+    if (canPrev) {
+      setIndex(index - 1);
+    }
   };
 
   const goNext = () => {
-    if (total === 0) return;
-    setIndex((i) => (i + 1) % total);
+    if (canNext) {
+      setIndex(index + 1);
+    }
   };
 
   const goTo = (i: number) => {
-    if (i < 0 || i >= total) return;
     setIndex(i);
   };
 
   const markLoaded = (id: string) => {
-    setLoadedIds((prev) => (prev[id] ? prev : { ...prev, [id]: true }));
+    setLoadedIds((prev) => ({ ...prev, [id]: true }));
   };
 
-  if (!current) return <p className="hint">No videos yet.</p>;
+  // Get visible cards
+  const getVisibleCards = () => {
+    const cards = [];
+    
+    // Show prev card if exists
+    if (index > 0) {
+      cards.push({ video: items[index - 1], idx: index - 1, position: 'prev' });
+    }
+    
+    // Current card (always show)
+    cards.push({ video: items[index], idx: index, position: 'current' });
+    
+    // Show next card if exists
+    if (index < total - 1) {
+      cards.push({ video: items[index + 1], idx: index + 1, position: 'next' });
+    }
+    
+    return cards;
+  };
 
-  const controls = (
-    <div className="creator-controls">
-      <button className="creator-btn" type="button" onClick={goPrev} aria-label="Previous video">
-        ←
-      </button>
-      <button className="creator-btn" type="button" onClick={goNext} aria-label="Next video">
-        →
-      </button>
-    </div>
-  );
-
-  const dots = (
-    <>
-      {safeItems.map((v, i) => (
-        <button
-          key={v.id}
-          type="button"
-          className={`creator-dot ${i === index ? "is-active" : ""}`}
-          onClick={() => goTo(i)}
-          aria-label={`Go to video ${i + 1}`}
-        />
-      ))}
-    </>
-  );
-
-  const isLoaded = !!loadedIds[current.id];
-
-    const sliderRef = useSliderControls({
-        onPrev: goPrev,
-        onNext: goNext,
-    });
+  const visibleCards = getVisibleCards();
 
   return (
-        <div
-            ref={sliderRef}
-            tabIndex={0}
-            className="slider-focus"
-            aria-label="Creator videos slider. Use left and right arrows."
-        >
-            
-            <SliderShell
-            right={controls}
-            dots={dots}
-            title={total > 1 ? `${index + 1} / ${total}` : undefined}
+    <div className="creator-carousel">
+      {/* Left Arrow */}
+      <button
+        className="carousel-arrow carousel-arrow-left"
+        onClick={goPrev}
+        disabled={!canPrev}
+        aria-label="Previous video"
+      >
+        ←
+      </button>
+
+      {/* Cards Track */}
+      <div className="carousel-track">
+        {visibleCards.map(({ video, idx, position }) => {
+          const isLoaded = loadedIds[video.id];
+          const isActive = position === 'current';
+
+          return (
+            <div
+              key={video.id}
+              className={`video-card ${isActive ? 'active' : 'side'}`}
+              onClick={() => !isActive && goTo(idx)}
             >
-            <div className="creator-slide">
-                <div className="creator-media">
-                {!isLoaded ? (
-                    <button
-                    className="creator-cover"
-                    type="button"
-                    onClick={() => markLoaded(current.id)}
-                    aria-label={`Load video: ${current.title}`}
-                    >
-                    <span className="creator-play" aria-hidden="true">
-                        ▶
+              {/* Video Container */}
+              <div className="card-video-wrapper">
+                {!isLoaded || !isActive ? (
+                  <button
+                    className="card-cover"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (isActive) markLoaded(video.id);
+                    }}
+                    aria-label={`Load video: ${video.title}`}
+                  >
+                    <span className="card-play">▶</span>
+                    <span className="card-cover-text">
+                      {isActive ? 'Load video' : 'Click to view'}
                     </span>
-                    <span className="creator-cover-text">Load video</span>
-                    </button>
+                  </button>
                 ) : (
-                    <iframe
-                    className="creator-iframe"
-                    src={toYouTubeEmbedUrl(current.url, current.id)}
-                    title={current.title}
+                  <iframe
+                    className="card-iframe"
+                    src={toYouTubeEmbedUrl(video.url, video.id)}
+                    title={video.title}
                     loading="lazy"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
-                    />
+                  />
                 )}
-                </div>
+              </div>
 
-                <div className="creator-meta">
-                <h3 className="creator-title">{current.title}</h3>
-                <p className="creator-desc">{current.desc}</p>
-
-                <a className="creator-open" href={current.url} target="_blank" rel="noreferrer">
+              {/* Card Info */}
+              <div className="card-info">
+                <h3 className="card-title">{video.title}</h3>
+                <p className="card-desc">{video.desc}</p>
+                {isActive && (
+                  
+                   <a className="card-link"
+                    href={video.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                  >
                     Open on YouTube
-                </a>
-                </div>
+                  </a>
+                )}
+              </div>
             </div>
-            </SliderShell>
-        </div>
+          );
+        })}
+      </div>
+
+      {/* Right Arrow */}
+      <button
+        className="carousel-arrow carousel-arrow-right"
+        onClick={goNext}
+        disabled={!canNext}
+        aria-label="Next video"
+      >
+        →
+      </button>
+
+      {/* Counter */}
+      <div className="carousel-counter">
+        Video {index + 1} of {total}
+      </div>
+
+      {/* Dots Navigation */}
+      <div className="carousel-dots">
+        {items.map((video, i) => (
+          <button
+            key={video.id}
+            className={`carousel-dot ${i === index ? 'active' : ''}`}
+            onClick={() => goTo(i)}
+            aria-label={`Go to video ${i + 1}`}
+          />
+        ))}
+      </div>
+    </div>
   );
 }

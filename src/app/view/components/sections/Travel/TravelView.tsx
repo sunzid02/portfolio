@@ -59,6 +59,12 @@ export default function TravelView({ travel }: Props) {
         )}
       </div>
 
+
+       {/* photo album  */}
+      <p className="hint">{travel.photos.hint}</p>
+      <TravelSliderView items={travel.photos.items} />
+
+
       {/* Inspirational Travel Quote */}
       <figure className="quote">
         <blockquote>
@@ -76,10 +82,8 @@ export default function TravelView({ travel }: Props) {
         </figure>
       )} */}
 
-      <SectionTitleView title={travel.photos.title} subtitle={travel.photos.intro} />
-      <p className="hint">{travel.photos.hint}</p>
+      {/* <SectionTitleView title={travel.photos.title} subtitle={travel.photos.intro} /> */}
 
-      <TravelSliderView items={travel.photos.items} />
     </section>
   );
 }
