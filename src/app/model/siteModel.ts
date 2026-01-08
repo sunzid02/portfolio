@@ -145,7 +145,7 @@ export const siteModel: SiteModel = {
     subline:
       "5+ years of building scalable web apps and APIs.",
     pills: [
-      "5+ years • Full-Stack",
+      // "5+ years • Full-Stack",
       "Laravel • React • Angular • Node.js",
       "Performance • Clean Architecture • GDPR",
       "GenAI • RAG • LangChain • Vector DB",

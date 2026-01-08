@@ -1,6 +1,5 @@
 import type { TechModel } from "../../../../model/siteModel";
 import SectionTitleView from "../../ui/SectionTitle/SectionTitleView";
-import CardView from "../../ui/Card/CardView";
 import TechCubeView from "./TechCubeView";
 
 type Props = {

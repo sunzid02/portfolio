@@ -3,4 +3,7 @@ export function toYouTubeEmbedUrl(videoUrl: string, videoId: string) {
   return `https://www.youtube.com/embed/${encodeURIComponent(
     videoId
   )}?autoplay=1&rel=0&modestbranding=1`;
+
+  console.log(videoUrl);
+  
 }

@@ -13,7 +13,7 @@ export default function TechCubeView({ tech }: Props) {
   const [rx, setRx] = useState(-15);
   const [ry, setRy] = useState(25);
   const [active, setActive] = useState<Side>(0);
-  const [isDragging, setIsDragging] = useState(false);
+  const [isDragging] = useState(false);
 
   const [autoRotate, setAutoRotate] = useState(true);
   const [isInteracting, setIsInteracting] = useState(false);
