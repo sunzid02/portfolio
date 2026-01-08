@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import type { TravelPhoto } from "../../../../model/siteModel";
 
 import SliderShell from "../../ui/Slider/SliderShell";
+import { useSliderControls } from "../../../hooks/useSliderControls"; 
 
 type Props = {
   items: TravelPhoto[];
@@ -42,6 +43,14 @@ export default function TravelSliderView({ items }: Props) {
     </div>
   );
 
+
+  const sliderRef = useSliderControls({
+    onPrev: goPrev,
+    onNext: goNext,
+  });
+
+
+
   const dots = (
     <>
       {safeItems.map((_, i) => (
@@ -57,21 +66,28 @@ export default function TravelSliderView({ items }: Props) {
   );
 
   return (
-    <SliderShell right={controls} dots={dots}>
-<div className="travel-slide">
-  <div className="travel-media">
-    <img src={current.src} alt={current.title} loading="lazy" />
-    <div className="travel-overlay" />
-    <div className="travel-overlay-title">{current.title}</div>
+    
+    <div
+        ref={sliderRef}
+        tabIndex={0}
+        className="slider-focus"
+        aria-label="Travel slider. Use left and right arrows."
+      >
+        <SliderShell right={controls} dots={dots}>
+            <div className="travel-slide">
+              <div className="travel-media">
+                <img src={current.src} alt={current.title} loading="lazy" />
+                <div className="travel-overlay" />
+                <div className="travel-overlay-title">{current.title}</div>
 
-    {controls}
-  </div>
+                {controls}
+              </div>
 
-  <div className="travel-meta">
-    <p className="travel-desc">{current.desc}</p>
-  </div>
-</div>
-
-    </SliderShell>
+              <div className="travel-meta">
+                <p className="travel-desc">{current.desc}</p>
+              </div>
+            </div>
+        </SliderShell>
+      </div>
   );
 }

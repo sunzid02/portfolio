@@ -10,7 +10,11 @@ export type HeroModel = {
   pills: string[];
   cta: {
     email: string;
-    links: { label: string; url: string }[];
+    links: {
+      label: string;
+      url: string;
+      icon: "linkedin" | "github" | "youtube";
+    }[];
   };
   note: string;
 };
@@ -137,27 +141,39 @@ export const siteModel: SiteModel = {
   ],
 
   hero: {
-    headline:
-      "Full-Stack Developer building reliable products with performance and clean architecture.",
+    headline: "Full-Stack Developer | MSc Data Science @ TU Dortmund (Ongoing)",
     subline:
-      "Based in Dortmund, Germany. I am a Full-Stack Developer with 5+ years of experience delivering web applications across Europe and Asia. I enjoy API design, performance optimization, and building systems that teams can maintain long term.",
+      "5+ years of building scalable web apps and APIs.",
     pills: [
-      "5+ years professional experience",
+      "5+ years • Full-Stack",
       "Laravel • React • Angular • Node.js",
       "Performance • Clean Architecture • GDPR",
-      "AI • RAG • LangChain • Vector DB",
-      "M.Sc. Data Science (TU Dortmund)",
-      "English C1 • German A2 (improving)",
+      "GenAI • RAG • LangChain • Vector DB",
     ],
     cta: {
       email: "sunzid02@gmail.com",
       links: [
-        { label: "LinkedIn", url: "https://www.linkedin.com/in/sarker-sunzid-mahmud" },
-        { label: "GitHub", url: "https://github.com/sunzid02" },
+        {
+          label: "LinkedIn",
+          url: "https://www.linkedin.com/in/sarker-sunzid-mahmud",
+          icon: "linkedin",
+        },
+        {
+          label: "GitHub",
+          url: "https://github.com/sunzid02",
+          icon: "github",
+        },
+        {
+          label: "YouTube",
+          url: "https://www.youtube.com/@sarkersunzidmahmud2875",
+          icon: "youtube",
+        },
       ],
     },
-    note: "Previously: Atflow GmbH (Sep 2025 to Dec 2025). Currently open to new opportunities.",
+
+    note: "Open to opportunities • Germany / EU",
   },
+
 
   about: {
     title: "About",

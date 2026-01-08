@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import type { CreatorVideo } from "../../../../model/siteModel";
 import SliderShell from "../../ui/Slider/SliderShell";
 import { toYouTubeEmbedUrl } from "../../../utils/youtube";
+import { useSliderControls } from "../../../hooks/useSliderControls"; 
 
 type Props = {
   items: CreatorVideo[];
@@ -64,47 +65,60 @@ export default function CreatorSliderView({ items }: Props) {
 
   const isLoaded = !!loadedIds[current.id];
 
+    const sliderRef = useSliderControls({
+        onPrev: goPrev,
+        onNext: goNext,
+    });
+
   return (
-    <SliderShell
-      right={controls}
-      dots={dots}
-      title={total > 1 ? `${index + 1} / ${total}` : undefined}
-    >
-      <div className="creator-slide">
-        <div className="creator-media">
-          {!isLoaded ? (
-            <button
-              className="creator-cover"
-              type="button"
-              onClick={() => markLoaded(current.id)}
-              aria-label={`Load video: ${current.title}`}
+        <div
+            ref={sliderRef}
+            tabIndex={0}
+            className="slider-focus"
+            aria-label="Creator videos slider. Use left and right arrows."
+        >
+            
+            <SliderShell
+            right={controls}
+            dots={dots}
+            title={total > 1 ? `${index + 1} / ${total}` : undefined}
             >
-              <span className="creator-play" aria-hidden="true">
-                ▶
-              </span>
-              <span className="creator-cover-text">Load video</span>
-            </button>
-          ) : (
-            <iframe
-              className="creator-iframe"
-              src={toYouTubeEmbedUrl(current.url, current.id)}
-              title={current.title}
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          )}
-        </div>
+            <div className="creator-slide">
+                <div className="creator-media">
+                {!isLoaded ? (
+                    <button
+                    className="creator-cover"
+                    type="button"
+                    onClick={() => markLoaded(current.id)}
+                    aria-label={`Load video: ${current.title}`}
+                    >
+                    <span className="creator-play" aria-hidden="true">
+                        ▶
+                    </span>
+                    <span className="creator-cover-text">Load video</span>
+                    </button>
+                ) : (
+                    <iframe
+                    className="creator-iframe"
+                    src={toYouTubeEmbedUrl(current.url, current.id)}
+                    title={current.title}
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    />
+                )}
+                </div>
 
-        <div className="creator-meta">
-          <h3 className="creator-title">{current.title}</h3>
-          <p className="creator-desc">{current.desc}</p>
+                <div className="creator-meta">
+                <h3 className="creator-title">{current.title}</h3>
+                <p className="creator-desc">{current.desc}</p>
 
-          <a className="creator-open" href={current.url} target="_blank" rel="noreferrer">
-            Open on YouTube
-          </a>
+                <a className="creator-open" href={current.url} target="_blank" rel="noreferrer">
+                    Open on YouTube
+                </a>
+                </div>
+            </div>
+            </SliderShell>
         </div>
-      </div>
-    </SliderShell>
   );
 }
