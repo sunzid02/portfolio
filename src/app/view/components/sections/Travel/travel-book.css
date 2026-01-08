@@ -527,26 +527,25 @@
 .travel-book-dots {
   display: flex;
   justify-content: center;
-  gap: 12px;
-  margin-top: 32px;
+  gap: 10px;
+  margin-top: 24px;
 }
 
 .travel-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.1);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .travel-dot:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.4);
-  transform: scale(1.3);
-  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.2);
 }
-
 .travel-dot:disabled {
   cursor: not-allowed;
 }
@@ -554,10 +553,9 @@
 .travel-dot.is-active {
   background: #3498db;
   border-color: #3498db;
-  width: 36px;
-  border-radius: 6px;
+  width: 32px;
+  border-radius: 5px;
 }
-
 /* Responsive Design */
 @media (max-width: 1024px) {
   .travel-book-spread {

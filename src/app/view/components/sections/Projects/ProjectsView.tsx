@@ -2,6 +2,7 @@ import type { ProjectsModel } from "../../../../model/siteModel";
 import SectionTitleView from "../../ui/SectionTitle/SectionTitleView";
 import CardView from "../../ui/Card/CardView";
 import FlipBookView from "../../ui/FlipBook/FlipBookView";
+// import "./flipbook-premium.css";
 
 type Props = {
   projects: ProjectsModel;
@@ -14,7 +15,7 @@ function chunk<T>(arr: T[], size: number): T[][] {
 }
 
 export default function ProjectsView({ projects }: Props) {
-  // 3 cards per page feels like a clean "catalog"
+  // 3 cards per page
   const pagesData = chunk(projects.items, 3);
 
   const pages = pagesData.map((group, pageIdx) => (
@@ -26,7 +27,7 @@ export default function ProjectsView({ projects }: Props) {
           {p.url && (
             <p className="card-actions">
               <a href={p.url} target="_blank" rel="noreferrer">
-                View
+                View Project
               </a>
             </p>
           )}
@@ -39,7 +40,7 @@ export default function ProjectsView({ projects }: Props) {
     <section id="projects" className="section fade-in">
       <SectionTitleView title={projects.title} subtitle={projects.intro} />
 
-      <FlipBookView id="projects-flipbook" title="Projects" pages={pages} />
+      <FlipBookView id="projects-flipbook" pages={pages} />
     </section>
   );
 }
