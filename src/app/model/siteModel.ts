@@ -331,6 +331,11 @@ export const siteModel: SiteModel = {
         desc: "Logistic regression and ROC analysis on sensor data to identify optimal daylight thresholds.",
         meta: "Python • scikit-learn • Data analysis",
       },
+      {
+        title: "Daylight Exposure Analysis",
+        desc: "Logistic regression and ROC analysis on sensor data to identify optimal daylight thresholds.",
+        meta: "Python • scikit-learn • Data analysis",
+      },
     ],
   },
 
@@ -403,6 +408,11 @@ export const siteModel: SiteModel = {
       hint: "Use the arrows to browse photos.",
       items: [
         {
+          src: "src/assets/travel/switzerland.jpg",
+          title: "Switzerland",
+          desc: "Sharp mountains, clean air, and quiet det...e. I learned how much clarity comes from simplicity.",
+        },
+        {
           src: "src/assets/travel/germany.jpg",
           title: "Germany",
           desc: "Match day energy with a giant flag and even bigger ex...on, like software, scales very fast in the right environment.",
@@ -411,11 +421,6 @@ export const siteModel: SiteModel = {
           src: "src/assets/travel/austria.jpg",
           title: "Austria",
           desc: "Cold air, calm views, and that feeling of...ture. Great reminder that pace matters, not just speed.",
-        },
-        {
-          src: "src/assets/travel/switzerland.jpg",
-          title: "Switzerland",
-          desc: "Sharp mountains, clean air, and quiet det...e. I learned how much clarity comes from simplicity.",
         },
         {
           src: "src/assets/travel/croatia.jpg",
