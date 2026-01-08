@@ -81,7 +81,8 @@
   overflow: hidden;
   backdrop-filter: blur(20px);
   cursor: pointer;
-  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.5s ease;
+  position: relative;
 }
 
 .video-card.side {
@@ -276,9 +277,14 @@
   padding: 0;
 }
 
-.carousel-dot:hover {
+.carousel-dot:hover:not(:disabled) {
   background: rgba(255, 255, 255, 0.3);
   transform: scale(1.2);
+}
+
+.carousel-dot:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
 .carousel-dot.active {

@@ -10,6 +10,7 @@ type Props = {
 export default function CreatorSliderView({ items }: Props) {
   const [index, setIndex] = useState(0);
   const [loadedIds, setLoadedIds] = useState<Record<string, boolean>>({});
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const total = items.length;
 
@@ -21,19 +22,27 @@ export default function CreatorSliderView({ items }: Props) {
   const canNext = index < total - 1;
 
   const goPrev = () => {
-    if (canPrev) {
+    if (canPrev && !isAnimating) {
+      setIsAnimating(true);
       setIndex(index - 1);
+      setTimeout(() => setIsAnimating(false), 500);
     }
   };
 
   const goNext = () => {
-    if (canNext) {
+    if (canNext && !isAnimating) {
+      setIsAnimating(true);
       setIndex(index + 1);
+      setTimeout(() => setIsAnimating(false), 500);
     }
   };
 
   const goTo = (i: number) => {
-    setIndex(i);
+    if (i !== index && !isAnimating) {
+      setIsAnimating(true);
+      setIndex(i);
+      setTimeout(() => setIsAnimating(false), 500);
+    }
   };
 
   const markLoaded = (id: string) => {
@@ -68,7 +77,7 @@ export default function CreatorSliderView({ items }: Props) {
       <button
         className="carousel-arrow carousel-arrow-left"
         onClick={goPrev}
-        disabled={!canPrev}
+        disabled={!canPrev || isAnimating}
         aria-label="Previous video"
       >
         ←
@@ -84,7 +93,7 @@ export default function CreatorSliderView({ items }: Props) {
             <div
               key={video.id}
               className={`video-card ${isActive ? 'active' : 'side'}`}
-              onClick={() => !isActive && goTo(idx)}
+              onClick={() => !isActive && !isAnimating && goTo(idx)}
             >
               {/* Video Container */}
               <div className="card-video-wrapper">
@@ -93,7 +102,7 @@ export default function CreatorSliderView({ items }: Props) {
                     className="card-cover"
                     onClick={(e) => {
                       e.stopPropagation();
-                      if (isActive) markLoaded(video.id);
+                      if (isActive && !isAnimating) markLoaded(video.id);
                     }}
                     aria-label={`Load video: ${video.title}`}
                   >
@@ -139,7 +148,7 @@ export default function CreatorSliderView({ items }: Props) {
       <button
         className="carousel-arrow carousel-arrow-right"
         onClick={goNext}
-        disabled={!canNext}
+        disabled={!canNext || isAnimating}
         aria-label="Next video"
       >
         →
@@ -157,6 +166,7 @@ export default function CreatorSliderView({ items }: Props) {
             key={video.id}
             className={`carousel-dot ${i === index ? 'active' : ''}`}
             onClick={() => goTo(i)}
+            disabled={isAnimating}
             aria-label={`Go to video ${i + 1}`}
           />
         ))}
