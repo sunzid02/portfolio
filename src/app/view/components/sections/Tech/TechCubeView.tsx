@@ -20,7 +20,7 @@ export default function TechCubeView({ tech }: Props) {
 
   useCubeAutoRotate({
     enabled: autoRotate && !isInteracting,
-    speedDegPerSec: 25, // slow + premium
+    speedDegPerSec: 10, // slow + premium
     onRotate: (delta) => setRy((v) => v + delta),
   });
 

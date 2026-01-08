@@ -1,30 +1,33 @@
+import { useState } from "react";
 import type { ExperienceModel } from "../../../../model/siteModel";
 import SectionTitleView from "../../ui/SectionTitle/SectionTitleView";
-import CardView from "../../ui/Card/CardView";
+import ExperienceItemView from "./ExperienceItemView";
+import "./experience.css";
 
 type Props = {
   experience: ExperienceModel;
 };
 
 export default function ExperienceView({ experience }: Props) {
-  return (
-<section id="experience" className="section fade-in">
-  <SectionTitleView title={experience.title} />
+  const [openIndex, setOpenIndex] = useState(0);
 
-      <div className="stack">
-        {experience.items.map((item) => (
-          <CardView
-            key={`${item.title}-${item.when}`}
-            title={item.title}
-            subtitle={item.when}
-          >
-            <ul>
-              {item.bullets.map((b, idx) => (
-                <li key={`${item.title}-${idx}`}>{b}</li>
-              ))}
-            </ul>
-          </CardView>
-        ))}
+  return (
+    <section id="experience" className="section fade-in">
+      <SectionTitleView title={experience.title} />
+
+      <div className="exp">
+        <div className="exp-list">
+          {experience.items.map((item, idx) => (
+            <ExperienceItemView
+              key={`${item.title}-${item.when}`}
+              title={item.title}
+              when={item.when}
+              bullets={item.bullets}
+              isOpen={openIndex === idx}
+              onToggle={() => setOpenIndex((cur) => (cur === idx ? -1 : idx))}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
