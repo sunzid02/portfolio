@@ -196,16 +196,19 @@ export const siteModel: SiteModel = {
   about: {
     title: "About",
     paragraphs: [
-      "I am a Full-Stack Developer with 5+ years of experience delivering web applications across Europe and Asia. I enjoy API design, performance optimization, and building systems that teams can maintain long term.",
-      "Beyond technical skills, I am someone who values clarity, ownership, and long term thinking. I like understanding the why behind a problem, simplifying complexity, and leaving systems better than I found them. Teams usually describe me as calm, reliable, and easy to collaborate with.",
+      "I am a Full-Stack Developer with over five years of professional experience building and delivering scalable web applications across Europe and Asia. I work across backend and frontend, specializing in API development, performance optimization, and designing reliable systems that are easy to maintain and extend over time. My core focus is writing clean, well-structured code that supports long-term product growth.",
+      "Alongside my industry experience, I am pursuing a Master’s degree in Data Science, which allows me to combine strong software engineering practices with machine learning and applied AI. This combination helps me build applications that are not only technically robust, but also enhanced by data, automation, and intelligent decision-making. I am comfortable working at the intersection of web development, data, and AI-driven features.",
+      "I value clarity, ownership, and long-term thinking in every project. Before starting any task, I follow a principle I call WWW: What, Why, and Where. I focus on understanding what needs to be built, why it matters from a business and user perspective, and where it fits within the overall system. This approach helps me reduce complexity, make better architectural decisions, and leave codebases cleaner and more stable than before.",
+      "Colleagues often describe me as calm, dependable, and easy to collaborate with. I enjoy breaking down complex problems, connecting ideas across systems, and building solutions that remain reliable and useful long after they are deployed.",
     ],
     focusAreas: [
-      "Backend APIs and clean architecture",
-      "Frontend web apps (React and Angular)",
-      "Performance, reliability, and security basics",
-      "DevOps fundamentals (Docker, Kubernetes, CI/CD)",
+      "Backend API development and clean architecture",
+      "Frontend web applications with React and Angular",
+      "Performance optimization, reliability, and security fundamentals",
+      "DevOps and cloud basics including Docker, Kubernetes, and CI/CD",
     ],
   },
+
 
   tech: {
     title: "Tech Stack",
@@ -345,14 +348,33 @@ export const siteModel: SiteModel = {
         url: "https://github.com/sunzid02/SocialSite",
       },
       {
-        title: "Daylight Exposure Analysis",
+        title: "Daylight Exposure Analysis (DGUV Internship)",
         desc: "Logistic regression and ROC analysis on sensor data to identify optimal daylight thresholds.",
         meta: "Python • scikit-learn • Data analysis",
       },
       {
-        title: "Daylight Exposure Analysis",
-        desc: "Logistic regression and ROC analysis on sensor data to identify optimal daylight thresholds.",
-        meta: "Python • scikit-learn • Data analysis",
+        title: "Weather App - React Dashboard",
+        desc: "The Weather App provides current weather information for locations in Germany. Built with React and Redux, the app fetches weather data from the Open-Meteo API and uses the OpenCage Geocoding API for location search. It displays detailed weather information such as temperature, wind speed, wind direction, and weather conditions in a user-friendly interface.",
+        meta: "React • Redux • Open-Meteo API • OpenCage Geocoding API",
+        url: "https://github.com/sunzid02/WeatherApp"
+      },
+      {
+        title: "Chatting App - Vue.js & Firebase",
+        desc: "A real-time chatting application built with Vue.js and Firebase, featuring user authentication, chat rooms, and message persistence.",
+        meta: "Laravel • Vue.js • Firebase • Real-time communication",
+        url: "https://github.com/sunzid02/Broadcasting"
+      },
+      {
+        title: "Movie-Recommendation-System",
+        desc: "Recommend the movies based on the user input, Cosine_Similarity of Scikit learn has been used to check the similarity between the movies and recommend the most similar movies.",
+        meta: "sklearn • Python • Jupyter Notebook • Data Analysis",
+        url: "https://github.com/sunzid02/Movie-Recommendation-System"
+      },
+      {
+        title: "Customer Segmentation",
+        desc: "Using K-means algorithm detects the customer clusters based on their purchasing behavior, which helps the business to target specific customer groups with tailored marketing strategies.",
+        meta: "KMeans • Python • Jupyter Notebook • Data Analysis",
+        url: "https://github.com/sunzid02/-Customer-Segmentation"
       },
     ],
   },
@@ -428,43 +450,93 @@ export const siteModel: SiteModel = {
         {
           src: "src/assets/travel/switzerland.jpg",
           title: "Switzerland",
-          desc: "Sharp mountains, clean air, and quiet det...e. I learned how much clarity comes from simplicity.",
+          desc: `Flying above the mountains, nothing under my feet, just air and trust.
+                  I remember the mix of fear and excitement, the loud laugh that came out without thinking, and the feeling of being completely alive.
+
+                  \nFor a few minutes, all worries disappeared.
+                  No plans, no pressure, just the sky, the wind, and pure joy.
+
+                  It taught me that sometimes you have to let go to truly feel free.`,
         },
-        {
+
+       {
           src: "src/assets/travel/germany.jpg",
           title: "Germany",
-          desc: "Match day energy with a giant flag and even bigger ex...on, like software, scales very fast in the right environment.",
+          desc: `Standing in the stadium, holding the flag, I felt something deeper than excitement.
+                  It was pride mixed with gratitude.
+
+                  Germany gave me more than memories.
+                  It gave me a sense of belonging, growth, and a second home built through experiences.
+
+                  In that moment, I was not just watching a game.
+                  I was celebrating the journey, the struggles, and how far I have come.`,
         },
         {
           src: "src/assets/travel/austria.jpg",
           title: "Austria",
-          desc: "Cold air, calm views, and that feeling of...ture. Great reminder that pace matters, not just speed.",
+          desc: "A small bridge, fresh green hills, and a bicycle paused in between. It looks like a moment where nothing is rushed. You are not trying to reach somewhere fast, I was just enjoying where I was. The mountains stand quietly, the air feels clean, and the ride feels light. It captures freedom in a simple form. No noise, no pressure, just movement, balance, and peace. A reminder that sometimes the best journeys are slow ones.",
         },
         {
           src: "src/assets/travel/croatia.jpg",
           title: "Croatia",
-          desc: "Sun, sea, and a peaceful reset. Travel he...sharper focus and a lighter mindset for work.",
+          desc: `Sitting on the Iron Throne in Dubrovnik felt unreal.
+                  For a moment, I was not a traveler or a tourist.
+
+                  I felt like the king of the Seven Kingdoms.
+                  Relaxed, confident, and enjoying the power of imagination.
+
+                  It was playful and symbolic.
+                  A reminder that sometimes life lets you step into a story and own the moment.`,
         },
         {
           src: "src/assets/travel/spain.jpg",
           title: "Spain",
-          desc: "Warm streets, new language, new rhythm. R...t growth often comes from discomfort and curiosity.",
+          desc: `Standing on the rocks of Montserrat, I felt small in the best way.
+                  The mountains were rough, calm, and steady, like they had seen everything.
+
+                  The wind was quiet, the view endless.
+                  It felt like a moment of pause, reflection, and strength.
+
+                  Up there, I was not rushing anywhere.
+                  I was just present, grounded, and trusting the path ahead.`,
         },
         {
           src: "src/assets/travel/turkey.jpg",
           title: "Turkey",
-          desc: "History everywhere and incredible people....ve that context matters when understanding any system.",
+          desc: `Standing inside Hagia Sophia in Istanbul felt deeply grounding.
+                  The space was vast, quiet, and full of history that could be felt rather than explained.
+
+                  I felt small, humble, and present.
+                  Surrounded by centuries of faith, culture, and human devotion.
+
+                  It was a moment of reflection.
+                  A reminder of time, belief, and how many lives have passed through the same space before me.`,
         },
         {
           src: "src/assets/travel/france.jpg",
           title: "France",
-          desc: "A quick stop, a big memory. Sometimes the... moments become the most meaningful ones.",
+          desc: `At the Louvre in Paris, doing my best impression of modern art.
+                  I am the one on the left, just in case you are wondering.
+
+                  We tried to hold the pyramid like it was light.
+                  Turns out friendship and bad ideas make great memories.
+
+                  Cold night, tired feet, and a lot of laughing.
+                  Paris taught me that sometimes the best moments are unplanned and slightly stupid.`,
         },
         {
           src: "src/assets/travel/bd.jpg",
           title: "Bangladesh",
-          desc: "Where it all started. Roots, hustle, famil...h built the mindset I carry into every project.",
-        },
+          desc: `Cox’s Bazar at sunset, standing by the sea with the person I love.
+                  The sky was calm, the waves were slow, and everything felt quiet inside.
+
+                  We did not talk much.
+                  Holding hands was enough.
+
+                  This moment was about love, trust, and shared silence.
+                  A reminder that the most meaningful journeys are the ones you do not take alone.`,
+        }
+
       ],
     },
 

@@ -444,6 +444,13 @@
   padding-bottom: 12px;
 }
 
+.travel-book-dots > button {
+  /* background: transparent; */
+  /* border: none; */
+  /* cursor: pointer; */
+  padding: 0;
+}
+
 .travel-story {
   flex: 1;
   color: #34495e;
@@ -455,6 +462,7 @@
 .travel-story p {
   margin: 0;
   text-align: justify;
+  color: #3f4551;
 }
 
 .travel-page-number {

@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import "./theme-toggle.css";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<'dark' | 'light' | 'rain' | 'snow'>('dark');
+  const [theme, setTheme] = useState<'dark' | 'rain' | 'snow'>('dark');
+  // const [theme, setTheme] = useState<'dark' | 'light' | 'rain' | 'snow'>('dark');
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -200,13 +201,13 @@ export default function ThemeToggle() {
             <span className="theme-label">Dark</span>
           </button>
           
-          <button 
+          {/* <button 
             className={`theme-option ${theme === 'light' ? 'active' : ''}`}
             onClick={() => handleThemeChange('light')}
           >
             <span className="theme-icon">☀️</span>
             <span className="theme-label">Light</span>
-          </button>
+          </button> */}
           
           <button 
             className={`theme-option ${theme === 'rain' ? 'active' : ''}`}
