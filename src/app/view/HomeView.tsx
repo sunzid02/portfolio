@@ -14,6 +14,9 @@ import TravelView from "./components/sections/Travel/TravelView";
 import RecommendationsView from "./components/sections/Recommendations/RecommendationsView";
 import FooterView from "./components/sections/Footer/FooterView";
 
+import ThemeToggle from "./components/ui/ThemeToggle/ThemeToggle";
+
+
 export default function HomeView() {
   useFadeInOnScroll(); // 👈 activate fade logic
   useActiveSection(); // 👈 activate fade logic
@@ -42,6 +45,8 @@ export default function HomeView() {
         {/* <ContactView contact={model.contact} /> */}
         <FooterView contact={model.contact} brand={model.brand} />
       </main>
+
+       <ThemeToggle />
     </>
   );
 }

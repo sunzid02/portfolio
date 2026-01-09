@@ -8,6 +8,7 @@
 /* UI sub-styles */
 @import "../app/view/components/ui/Slider/slider.css";
 @import "../app/view/components/ui/FlipBook/flipbook.css";
+@import "./themes.css";
 
 /* --------------------
    THEME TOKENS
@@ -732,113 +733,7 @@ main.container {
   display: block;
 }
 
-/* --------------------
-   TRAVEL SLIDER (cinematic)
--------------------- */
-.travel-slide {
-  background: var(--panel);
-  border: 1px solid var(--subtle);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-soft);
-}
-
-.travel-media {
-  position: relative;
-  width: 100%;
-  height: 280px;
-  background: var(--bg);
-}
-
-.travel-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.travel-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(
-      80% 60% at 50% 40%,
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0.45)
-    ),
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.05),
-      rgba(0, 0, 0, 0.6)
-    );
-}
-
-.travel-overlay-title {
-  position: absolute;
-  left: 1.25rem;
-  bottom: 1.8rem;
-  color: #ffffff;
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 0.2px;
-}
-
-.travel-meta {
-  padding: 1rem 1.25rem 1.25rem;
-}
-
-.travel-desc {
-  margin: 0;
-  color: var(--muted-2);
-  font-size: 0.95rem;
-  max-width: 620px;
-}
-
-.travel-controls {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  display: flex;
-  gap: 0.4rem;
-}
-
-.travel-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(15, 18, 35, 0.8);
-  color: #ffffff;
-  cursor: pointer;
-  backdrop-filter: blur(6px);
-}
-
-.travel-btn:hover {
-  background: rgba(122, 162, 255, 0.18);
-}
-
-.travel-dot {
-  width: 10px;
-  height: 4px;
-  border-radius: 999px;
-  border: 0;
-  background: rgba(255, 255, 255, 0.25);
-  cursor: pointer;
-  transition: width 0.15s ease, background 0.15s ease;
-}
-
-.travel-dot.is-active {
-  width: 18px;
-  background: rgba(122, 162, 255, 0.9);
-}
-
-@media (max-width: 640px) {
-  .travel-media {
-    height: 200px;
-  }
-}
-
-
+/* 
 /* --------------------
    CREATOR SLIDER
 -------------------- */
