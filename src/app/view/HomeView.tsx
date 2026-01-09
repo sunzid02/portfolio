@@ -16,6 +16,7 @@ import FooterView from "./components/sections/Footer/FooterView";
 
 import ThemeToggle from "./components/ui/ThemeToggle/ThemeToggle";
 
+import BackToTopView from "./components/ui/BackToTop/BackToTopView";
 
 export default function HomeView() {
   useFadeInOnScroll(); // 👈 activate fade logic
@@ -45,7 +46,9 @@ export default function HomeView() {
         {/* <ContactView contact={model.contact} /> */}
         <FooterView contact={model.contact} brand={model.brand} />
       </main>
-
+      
+      
+       <BackToTopView />
        <ThemeToggle />
     </>
   );
