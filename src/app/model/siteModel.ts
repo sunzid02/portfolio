@@ -448,7 +448,7 @@ export const siteModel: SiteModel = {
       hint: "Use the arrows to browse photos.",
       items: [
         {
-          src: "src/assets/travel/switzerland.jpg",
+          src: "assets/travel/switzerland.jpg",
           title: "Switzerland",
           desc: `Flying above the mountains, nothing under my feet, just air and trust.
                   I remember the mix of fear and excitement, the loud laugh that came out without thinking, and the feeling of being completely alive.
@@ -460,7 +460,7 @@ export const siteModel: SiteModel = {
         },
 
        {
-          src: "src/assets/travel/germany.jpg",
+          src: "assets/travel/germany.jpg",
           title: "Germany",
           desc: `Standing in the stadium, holding the flag, I felt something deeper than excitement.
                   It was pride mixed with gratitude.
@@ -472,12 +472,12 @@ export const siteModel: SiteModel = {
                   I was celebrating the journey, the struggles, and how far I have come.`,
         },
         {
-          src: "src/assets/travel/austria.jpg",
+          src: "assets/travel/austria.jpg",
           title: "Austria",
           desc: "A small bridge, fresh green hills, and a bicycle paused in between. It looks like a moment where nothing is rushed. You are not trying to reach somewhere fast, I was just enjoying where I was. The mountains stand quietly, the air feels clean, and the ride feels light. It captures freedom in a simple form. No noise, no pressure, just movement, balance, and peace. A reminder that sometimes the best journeys are slow ones.",
         },
         {
-          src: "src/assets/travel/croatia.jpg",
+          src: "assets/travel/croatia.jpg",
           title: "Croatia",
           desc: `Sitting on the Iron Throne in Dubrovnik felt unreal.
                   For a moment, I was not a traveler or a tourist.
@@ -489,7 +489,7 @@ export const siteModel: SiteModel = {
                   A reminder that sometimes life lets you step into a story and own the moment.`,
         },
         {
-          src: "src/assets/travel/spain.jpg",
+          src: "assets/travel/spain.jpg",
           title: "Spain",
           desc: `Standing on the rocks of Montserrat, I felt small in the best way.
                   The mountains were rough, calm, and steady, like they had seen everything.
@@ -501,7 +501,7 @@ export const siteModel: SiteModel = {
                   I was just present, grounded, and trusting the path ahead.`,
         },
         {
-          src: "src/assets/travel/turkey.jpg",
+          src: "assets/travel/turkey.jpg",
           title: "Turkey",
           desc: `Standing inside Hagia Sophia in Istanbul felt deeply grounding.
                   The space was vast, quiet, and full of history that could be felt rather than explained.
@@ -513,7 +513,7 @@ export const siteModel: SiteModel = {
                   A reminder of time, belief, and how many lives have passed through the same space before me.`,
         },
         {
-          src: "src/assets/travel/france.jpg",
+          src: "assets/travel/france.jpg",
           title: "France",
           desc: `At the Louvre in Paris, doing my best impression of modern art.
                   I am the one on the left, just in case you are wondering.
@@ -525,7 +525,7 @@ export const siteModel: SiteModel = {
                   Paris taught me that sometimes the best moments are unplanned and slightly stupid.`,
         },
         {
-          src: "src/assets/travel/bd.jpg",
+          src: "assets/travel/bd.jpg",
           title: "Bangladesh",
           desc: `Cox’s Bazar at sunset, standing by the sea with the person I love.
                   The sky was calm, the waves were slow, and everything felt quiet inside.
@@ -552,35 +552,35 @@ export const siteModel: SiteModel = {
         name: "Niklas",
         role: "Geschäftsführer",
         company: "Atflow GmbH",
-        photo: "src/assets/recommendations/niklas.jpg",
+        photo: "assets/recommendations/niklas.jpg",
         text: "I worked with Sarker Sunzid Mahmud during his time as a working student in our team, where he consistently delivered high-quality results. He independently designed and implemented complex features in React Native and PHP, taking full ownership from concept to delivery. Sarker learns fast, makes solid technical decisions and executes reliably. He works with focus and clarity, addresses challenges directly and raises the quality of the work around him. His contributions had a noticeable impact on our product development. He's driven and very capable. I appreciated working with him and am confident he'll continue to build an impressive career.",
       },
       {
         name: "Tanvir Mahmud Rabbi",
         role: "Software Engineer",
         company: "Zalando",
-        photo: "src/assets/recommendations/tanvir.jpg",
+        photo: "assets/recommendations/tanvir.jpg",
         text: "Sunzid is a very talented developer. He understands complex matters and grabs business logic, very quickly. He is always eager to learn and is a strong, goal oriented team player. I had the opportunity to work with him and supervise him directly. I was very impressed by his enthusiasm and will to always give his 100%. I wish him best of luck for all his future ventures.",
       },
       {
         name: "Abir Hossain",
         role: "Junior Data Scientist",
         company: "E.ON Digital Technology",
-        photo: "src/assets/recommendations/abir.jpg",
+        photo: "assets/recommendations/abir.jpg",
         text: "I had the privilege of studying alongside Sunzid during our Master's in Data Science, and throughout that time, I witnessed his exceptional dedication, resilience, and sharp intellect. What sets Sunzid apart is his unwavering commitment to delivering quality work. Perhaps what I value most is how clearly I see my own reflection in his persistence—he loves to approach problems with a solution-oriented attitude and never quits until he is genuinely satisfied with the outcome. Beyond his innate talent, I was inspired by his personal investment in growth through microlearning and continuous self-improvement. Working and learning alongside him was not only motivating but also personally enriching — I consider myself fortunate to have had that experience.",
       },
       {
         name: "Sara Foresti",
         role: "Developer",
         company: "Modern Citizens (UK)",
-        photo: "src/assets/recommendations/sara.jpg",
+        photo: "assets/recommendations/sara.jpg",
         text: "Sunzid is a brilliant programmer. I've had the pleasure of knowing him for about a year, as he worked as freelance developer for Daydot, helping us building A/B tests in busy periods. Above all, I was impressed with Sunzid's ability to quickly pick up feedbacks and improve day by day, adapting his code style to the company's standards. And, of course, his energy and enthusiasm. He would really be a great addition to any dev team and its without hesitation that I recommend Sunzid.",
       },
       {
         name: "Trevor Cookler",
         role: "Sr. Product Manager, Core Experience / Retention",
         company: "hims & hers",
-        photo: "src/assets/recommendations/trevor.jpg",
+        photo: "assets/recommendations/trevor.jpg",
         text: "Sunzid is a wonderful developer. He supported us with one of our larger clients (The Wall Street Journal and Barrons.com) in a wide range of A/B tests across acquisition channels (shop/checkout), the onboarding experience and several complex product engagement-related tests. He was able to quickly understand the test hypotheses, business goals and technical specifications and turn around an extremely high performing test. Beyond his technical ability, Sunzid was a pleasure to work with, was always energetic, curious and happy to assist at a moment's notice. I know Sunzid would be an incredible asset to any team.",
       },
     ],
