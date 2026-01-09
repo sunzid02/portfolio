@@ -85,6 +85,22 @@ export type ContactModel = {
 };
 
 
+export type RecommendationItem = {
+  name: string;
+  role: string;
+  company: string;
+  photo?: string;
+  text: string;
+  linkedin?: string;
+};
+
+export type RecommendationsModel = {
+  title: string;
+  intro: string;
+  items: RecommendationItem[];
+};
+
+
 export type TravelFlag = {
   emoji: string;
   name: string;
@@ -124,6 +140,7 @@ export type SiteModel = {
   creator: CreatorModel;
   travel: TravelModel;
   contact: ContactModel; 
+  recommendations: RecommendationsModel;
 
 };
 
@@ -137,7 +154,8 @@ export const siteModel: SiteModel = {
     { id: "projects", label: "Projects", href: "#projects" },
     { id: "creator", label: "Content", href: "#creator" },
     { id: "travel", label: "Travelling", href: "#travel" },
-    { id: "contact", label: "Contact", href: "#contact" },
+    { id: "recommendations", label: "Recommendations", href: "#recommendations" },
+    // { id: "contact", label: "Contact", href: "#contact" },
   ],
 
   hero: {
@@ -452,6 +470,48 @@ export const siteModel: SiteModel = {
 
 
     
+  },
+
+  recommendations: {
+    title: "Recommendations",
+    intro: "Kind words from colleagues and clients I've worked with over the years.",
+    items: [
+      {
+        name: "Niklas",
+        role: "Geschäftsführer",
+        company: "Atflow GmbH",
+        photo: "src/assets/recommendations/niklas.jpg",
+        text: "I worked with Sarker Sunzid Mahmud during his time as a working student in our team, where he consistently delivered high-quality results. He independently designed and implemented complex features in React Native and PHP, taking full ownership from concept to delivery. Sarker learns fast, makes solid technical decisions and executes reliably. He works with focus and clarity, addresses challenges directly and raises the quality of the work around him. His contributions had a noticeable impact on our product development. He's driven and very capable. I appreciated working with him and am confident he'll continue to build an impressive career.",
+      },
+      {
+        name: "Tanvir Mahmud Rabbi",
+        role: "Software Engineer",
+        company: "Zalando",
+        photo: "src/assets/recommendations/tanvir.jpg",
+        text: "Sunzid is a very talented developer. He understands complex matters and grabs business logic, very quickly. He is always eager to learn and is a strong, goal oriented team player. I had the opportunity to work with him and supervise him directly. I was very impressed by his enthusiasm and will to always give his 100%. I wish him best of luck for all his future ventures.",
+      },
+      {
+        name: "Abir Hossain",
+        role: "Junior Data Scientist",
+        company: "E.ON Digital Technology",
+        photo: "src/assets/recommendations/abir.jpg",
+        text: "I had the privilege of studying alongside Sunzid during our Master's in Data Science, and throughout that time, I witnessed his exceptional dedication, resilience, and sharp intellect. What sets Sunzid apart is his unwavering commitment to delivering quality work. Perhaps what I value most is how clearly I see my own reflection in his persistence—he loves to approach problems with a solution-oriented attitude and never quits until he is genuinely satisfied with the outcome. Beyond his innate talent, I was inspired by his personal investment in growth through microlearning and continuous self-improvement. Working and learning alongside him was not only motivating but also personally enriching — I consider myself fortunate to have had that experience.",
+      },
+      {
+        name: "Sara Foresti",
+        role: "Developer",
+        company: "Modern Citizens (UK)",
+        photo: "src/assets/recommendations/sara.jpg",
+        text: "Sunzid is a brilliant programmer. I've had the pleasure of knowing him for about a year, as he worked as freelance developer for Daydot, helping us building A/B tests in busy periods. Above all, I was impressed with Sunzid's ability to quickly pick up feedbacks and improve day by day, adapting his code style to the company's standards. And, of course, his energy and enthusiasm. He would really be a great addition to any dev team and its without hesitation that I recommend Sunzid.",
+      },
+      {
+        name: "Trevor Cookler",
+        role: "Sr. Product Manager, Core Experience / Retention",
+        company: "hims & hers",
+        photo: "src/assets/recommendations/trevor.jpg",
+        text: "Sunzid is a wonderful developer. He supported us with one of our larger clients (The Wall Street Journal and Barrons.com) in a wide range of A/B tests across acquisition channels (shop/checkout), the onboarding experience and several complex product engagement-related tests. He was able to quickly understand the test hypotheses, business goals and technical specifications and turn around an extremely high performing test. Beyond his technical ability, Sunzid was a pleasure to work with, was always energetic, curious and happy to assist at a moment's notice. I know Sunzid would be an incredible asset to any team.",
+      },
+    ],
   },
 
   contact: {

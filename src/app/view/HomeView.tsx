@@ -10,7 +10,9 @@ import ExperienceView from "./components/sections/Experience/ExperienceView";
 import ProjectsView from "./components/sections/Projects/ProjectsView";
 import CreatorView from "./components/sections/Creator/CreatorView";
 import TravelView from "./components/sections/Travel/TravelView";
-import ContactView from "./components/sections/Contact/ContactView";
+// import ContactView from "./components/sections/Contact/ContactView";
+import RecommendationsView from "./components/sections/Recommendations/RecommendationsView";
+import FooterView from "./components/sections/Footer/FooterView";
 
 export default function HomeView() {
   useFadeInOnScroll(); // 👈 activate fade logic
@@ -36,7 +38,9 @@ export default function HomeView() {
         <ProjectsView projects={model.projects} />
         <CreatorView creator={model.creator} />
         <TravelView travel={model.travel} />
-        <ContactView contact={model.contact} />
+        <RecommendationsView recommendations={model.recommendations} />
+        {/* <ContactView contact={model.contact} /> */}
+        <FooterView contact={model.contact} brand={model.brand} />
       </main>
     </>
   );

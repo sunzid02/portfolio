@@ -1452,3 +1452,194 @@ main.container {
   outline: 2px solid rgba(122, 162, 255, 0.6);
   outline-offset: 2px;
 }
+
+
+/* Hero CTA Section */
+.hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 32px 0;
+}
+
+/* Email Group */
+.hero-email-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.hero-email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.hero-email-text {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-email-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.hero-email-btn:hover .hero-email-text {
+  color: rgba(59, 130, 246, 1);
+}
+
+.hero-copy-btn {
+  width: 60px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-copy-btn:hover {
+  background: rgba(59, 130, 246, 0.2);
+  color: rgba(59, 130, 246, 1);
+  transform: scale(1.05);
+}
+
+.hero-copy-btn:active {
+  transform: scale(0.95);
+}
+
+/* Social Links */
+.hero-links {
+  display: flex;
+  gap: 12px;
+}
+
+/* Icon Buttons */
+.hero-icon-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  text-decoration: none;
+}
+
+.hero-icon-btn:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(147, 51, 234, 0.3));
+  border-color: rgba(59, 130, 246, 0.5);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Resume Button */
+.hero-resume-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.1));
+  border: 1.5px solid rgba(59, 130, 246, 0.3);
+  border-radius: 12px;
+  color: rgba(59, 130, 246, 1);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.hero-resume-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.hero-resume-btn:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.25), rgba(59, 130, 246, 0.15));
+  border-color: rgba(59, 130, 246, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+.hero-resume-btn:hover svg {
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-cta {
+    gap: 12px;
+  }
+  
+  .hero-email-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  
+  .hero-copy-btn {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .hero-icon-btn {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .hero-resume-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-cta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  
+  .hero-email-group {
+    width: 100%;
+  }
+  
+  .hero-email-btn {
+    flex: 1;
+  }
+  
+  .hero-email-text {
+    font-size: 13px;
+  }
+  
+  .hero-links {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .hero-resume-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
