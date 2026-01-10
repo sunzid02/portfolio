@@ -159,7 +159,7 @@ export const siteModel: SiteModel = {
   ],
 
   hero: {
-    headline: "Full-Stack Developer | MSc Data Science @ TU Dortmund (Ongoing)",
+    headline: "Full-Stack Developer | MSc Data Science @ TU Dortmund",
     subline:
       "5+ years of building scalable web apps and APIs.",
     pills: [
